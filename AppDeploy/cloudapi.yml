@@ -17,7 +17,11 @@ spec:
         image: vitoribb/cloud-api:latest
         ports:
           - containerPort: 80
-
+          resources:
+            limits:
+              cpu: 500m
+            requests:
+              cpu: 200m
 apiVersion: v1
 kind: Service
 metadata:
@@ -25,6 +29,7 @@ metadata:
   labels:
     run: cloudapi-pod
 spec:
+  type: LoadBalancer
   ports:
   - port: 80
     protocol: TCP
