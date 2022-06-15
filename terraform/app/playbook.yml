@@ -1,0 +1,13 @@
+hosts: localhost
+tasks:
+  - name: Deploy Pod
+    shell: |
+      kubectl apply -f cloudapi.yml
+  
+  - name: Deploy Service
+    shell: | 
+      kubectl expose deployment cloudapi-pod --port=80 --type=LoadBalancer
+  
+  - name: Create AutoScaling
+    shell: |
+      kubectl autoscale deployment cloudapi-pod --cpu-percent=50 --min=1 --max=10

@@ -1,0 +1,11 @@
+dotenv-cli==2.2.0
+executing==0.8.3
+fastapi==0.75.0
+filelock==3.4.2
+PyMySQL==1.0.2
+python-dotenv==0.19.2
+SQLAlchemy==1.4.36
+uvicorn==0.17.5
+virtualenv==20.13.1
+pydantic==1.9.0
+typing_extensions==4.1.1
